@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	
+
+	<!--<div class="container-fluid">
+		<main>	
+	-->
+	<div id="wrapper">
+			<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+				<div class="navbar-header">
+	                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	                    <span class="sr-only">Toggle navigation</span>
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                </button>
+	                <%= link_to "DLPN Admin", home_path, class: "navbar-brand" %>
+	            </div>
+	            <ul class="nav navbar-top-links navbar-right">
+	            	<li class="dropdown">
+	                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+	                        <i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-triangle-bottom"></i>
+	                    </a>
+	                    <% if current_user %> 
+		                    <ul class="dropdown-menu dropdown-user">
+		                    	 	
+			                    <li><a href=""><i class="glyphicon glyphicon-user fa-fw"></i> <%= current_user.username %></a>
+			                        </li>
+			                        <li><a href=""><i class=" glyphicon glyphicon-cog"></i> Cài đặt</a>
+			                        </li>
+			                        <li class="divider"></li>
+			                        <li>
+			                        <%= link_to(logout_path) do %>
+			                        	<i class="glyphicon glyphicon-log-out"></i>
+			                        	Đăng xuất
+			                        <%end%>
+		                        </li>
+		                        
+		                    </ul>
+	                    <% end %>
+	                    <!-- /.dropdown-user -->
+	                </li>
+	            </ul>
+	            <div class="navbar-default sidebar" role="navigation">
+	                <div class="sidebar-nav navbar-collapse">
+	                    <ul class="nav" id="side-menu">
+	                        <li class="sidebar-search">
+	                            <div class="input-group custom-search-form">
+	                                <input type="text" class="form-control" placeholder="Search...">
+	                                <span class="input-group-btn">
+	                                    <button class="btn btn-default" type="button">
+	                                        <i class="glyphicon glyphicon-search"></i>
+	                                    </button>
+	                                </span>
+	                            </div>
+	                            <!-- /input-group -->
+	                        </li>
+	                        <li>
+	                            <%= link_to(home_path) do %>
+		                            <i class="glyphicon glyphicon-stats glyphicon-fw"></i> 
+		                            Thống kê
+		                        </a>
+		                        <%end%>
+	                        </li>
+	                        <li>
+	                            <a href="#">
+	                            	<i class="glyphicon glyphicon-calendar"></i> 
+	                            	Lịch trình
+	                            </a>
+	                            <ul class="nav nav-second-level">
+	                                <li>
+	                                	<%= link_to 'Bảng lịch trình', schedules_path %>
+	                                 
+	                                </li>
+	                                <li>
+	                                	<%= link_to 'Thêm lịch trình', new_schedule_path %>
+	                                </li>
+	                            </ul>
+	                            <!-- /.nav-second-level -->
+	                        </li>
+	                        <li>
+	                            <a href="#">
+	                            	<i class="glyphicon glyphicon-picture"></i> 
+	                            	Ảnh
+	                            </a>
+	                            <ul class="nav nav-second-level">
+	                                <li>
+	                                	<%= link_to 'Thông tin ảnh', travels_path %>
+	                                </li>
+	                                <li>
+	                                	<%= link_to 'Thêm ảnh', new_travel_path %>
+	                                </li>
+	                            </ul>
+	                            <!-- /.nav-second-level -->
+	                        </li>
+	                    </ul>
+                    </div>
+                </div>
+
+
+				
+			</nav>
+			<div id="page-wrapper" data-role=”page”>
+	            <%= yield %>                    
+	        </div>			
+			
+		<!--</main>-->
+	</div>
+</body>
+</html>

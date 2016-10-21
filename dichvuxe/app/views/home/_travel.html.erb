@@ -1,0 +1,36 @@
+<% 
+@tm = 0
+if @travels.length == 0 %>
+<%else
+	@travels.each do |travel| 
+		@tm = @tm + 100
+%>
+
+		<div style="position: absolute; top: 0px; left: 0px; visibility: visible; transition: transform 250ms ease-out 0s, opacity 250ms ease-out 0s;" class="portfolio_item column shuffle-item filtered" data-groups=<%= getType(travel.idtype)%>>
+			<div class="" data-anim-effect="zoomIn" data-anim-delay=<%= @tm%>>
+		        <a href="#popup-<%=travel.id%>" class="open-popup-link">
+		        	<%= image_tag "1.jpg", title:"Hien thi anh"%>
+		        </a>
+			</div>
+			<div id="popup-<%=travel.id%>" class="white-popup mfp-hide" >
+				<div class="ui items">
+				    <div class="item">
+				        <div class="ui image">
+				            <%= image_tag "1.jpg"%>
+				        </div>
+				        <div class="content">
+				            <div class="header"><%=showType(travel.idtype)%></div>
+				            <div class="meta">
+				                <span><%=travel.id%></span>
+				            </div>
+				            <div class="description">
+				                <p><%=travel.title%></p>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+			</div>
+
+		</div>
+	<%end%>
+<%end%>

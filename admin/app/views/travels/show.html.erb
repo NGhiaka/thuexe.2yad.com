@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nội dung:</strong>
+  <%= @travel.title %>
+</p>
+
+<p>
+  <strong>Idtype:</strong>
+  <%= @travel.idtype %>
+</p>
+
+<p>
+  <strong>Loại ảnh:</strong>
+  <%= image_tag @travel.image.thumb.url %>
+</p>
+
+<%= link_to 'Chỉnh sữa', edit_travel_path(@travel) %> |
+<%= link_to 'Quay lại', travels_path %>

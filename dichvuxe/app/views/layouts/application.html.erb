@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<%= favicon_link_tag 'icon.png' %>
+		<title><%= yield(:title) %> | Dich Vu Cho Thue Xe Du Lich Phuoc Nhan</title>
+	    <%= csrf_meta_tags %>
+	    <%= stylesheet_link_tag    'application', media: 'all','data-turbolinks-track': 'reload' %>
+	    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	</head>
+	<body>
+		
+		<div id="body-contain">
+				<%= yield %>
+		</div>
+
+	</body>
+</html>
